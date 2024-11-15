@@ -1,10 +1,10 @@
-import TableRegisters from "../components/TableRegisters"
+import StudentsLayout from "../layout/StudentsLayout"
 
 function Profile() {
   return (
     <>
       <div>
-        <TableRegisters />
+        <StudentsLayout />
       </div>
     </>
   )

@@ -1,0 +1,60 @@
+.button-delete {
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+  background: #e62222;
+}
+
+.button-delete,
+.button-delete span {
+  transition: 200ms;
+}
+
+.button-delete .text {
+  transform: translateX(35px);
+  color: white;
+  font-weight: bold;
+}
+
+.button-delete .icon {
+  position: absolute;
+  border-left: 1px solid #ffffff;
+  transform: translateX(110px);
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-delete svg {
+  width: 15px;
+  fill: #eee;
+}
+
+.button-delete:hover {
+  background: #ff3636;
+}
+
+.button-delete:hover .text {
+  color: transparent;
+}
+
+.button-delete:hover .icon {
+  width: 150px;
+  border-left: none;
+  transform: translateX(0);
+}
+
+.button-delete:focus {
+  outline: none;
+}
+
+.button-delete:active .icon svg {
+  transform: scale(0.8);
+}
