@@ -1,0 +1,10 @@
+.form-new-register {
+  display: flex;
+  width: 100%;
+}
+
+.form-new-register form {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+}

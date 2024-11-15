@@ -1,6 +1,6 @@
-import './ButtonSave.css'
+import './ButtonCancel.css'
 
-const ButtonSave = () => {
+const ButtonCancel = () => {
   return (
     <button className='button-save'>
       <div className="svg-wrapper-1">
@@ -10,11 +10,11 @@ const ButtonSave = () => {
           </svg>
         </div>
       </div>
-      <span>Guardar</span>
+      <span>Cancelar</span>
     </button>
   )
 }
 
 
 
-export default ButtonSave
+export default ButtonCancel

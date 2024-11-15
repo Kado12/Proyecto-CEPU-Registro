@@ -1,0 +1,60 @@
+.button-edit {
+  min-width: 150px;
+  height: 48px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+  background: #039a08;
+}
+
+.button-edit,
+.button-edit span {
+  transition: 200ms;
+}
+
+.button-edit .text {
+  transform: translateX(30px);
+  color: white;
+  font-weight: bold;
+}
+
+.button-edit .icon {
+  position: absolute;
+  border-left: 1px solid #ffffff;
+  transform: translateX(100px);
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-edit svg {
+  width: 15px;
+  fill: #eee;
+}
+
+.button-edit:hover {
+  background: #3e9e1e;
+}
+
+.button-edit:hover .text {
+  color: transparent;
+}
+
+.button-edit:hover .icon {
+  width: 150px;
+  border-left: none;
+  transform: translateX(-6px);
+}
+
+.button-edit:focus {
+  outline: none;
+}
+
+.button-edit:active .icon svg {
+  transform: scale(0.8);
+}

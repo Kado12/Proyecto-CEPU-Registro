@@ -1,66 +1,68 @@
 import ButtonSave from "./ButtonSave"
+import InputForm from "./InputForm"
+import './RegisterForm.css'
 
 const RegisterForm = ({ formData, isEditing, handleInputChange, handleSubmit, resetForm }) => {
   return (
     <div className="form-new-register">
       <form onSubmit={handleSubmit}>
-        <input
+        <InputForm
           type="text"
           name="nameSurname"
           value={formData.nameSurname}
           onChange={handleInputChange}
           placeholder="Nombres y Apellidos"
         />
-        <input
+        <InputForm
           type="text"
           name="shift"
           value={formData.shift}
           onChange={handleInputChange}
           placeholder="Turno"
         />
-        <input
+        <InputForm
           type="text"
           name="headquarters"
           value={formData.headquarters}
           onChange={handleInputChange}
           placeholder="Sede"
         />
-        <input
+        <InputForm
           type="text"
           name="exp"
           value={formData.exp}
           onChange={handleInputChange}
           placeholder="Expediente"
         />
-        <input
+        <InputForm
           type="text"
           name="dni"
           value={formData.dni}
           onChange={handleInputChange}
           placeholder="N° DNI"
         />
-        <input
+        <InputForm
           type="text"
           name="school"
           value={formData.school}
           onChange={handleInputChange}
           placeholder="Escuela"
         />
-        <input
+        <InputForm
           type="text"
           name="plan"
           value={formData.plan}
           onChange={handleInputChange}
           placeholder="Plan"
         />
-        <input
+        <InputForm
           type="text"
           name="codOp1"
           value={formData.codOp1}
           onChange={handleInputChange}
           placeholder="Cod. Operación 1"
         />
-        <input
+        <InputForm
           type="text"
           name="codOp2"
           value={formData.codOp2}
