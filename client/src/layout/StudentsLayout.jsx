@@ -21,6 +21,7 @@ function StudentsLayout() {
     codOp2: ''
   })
   const [isEditing, setIsEditing] = useState(false)
+  const [showPopup, setShowPopup] = useState(false)
 
   const handleSearchChange = (event) => {
     setSearchRegister(event.target.value)
@@ -33,6 +34,22 @@ function StudentsLayout() {
       register.exp.toString().includes(searchRegister)
     )
   })
+
+  useEffect(() => {
+    if (filteredRegister.length === 1 && searchRegister.length === 8) {
+      setShowPopup(true);
+
+      // Añadir cierre automático
+      const timer = setTimeout(() => {
+        setShowPopup(false);
+        setSearchRegister('');
+      }, 2000); // 5 segundos
+
+      // Limpiar el timer si el componente se desmonta
+      return () => clearTimeout(timer);
+    }
+  }, [filteredRegister, searchRegister]);
+
 
   // Cargar datos al montar el componente
   useEffect(() => {
@@ -169,6 +186,38 @@ function StudentsLayout() {
 
   return (
     <>
+      {showPopup && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="relative bg-white rounded-lg shadow-xl p-6 w-96 max-w-sm">
+            <button
+              className="absolute top-2 right-2 text-gray-500 hover:text-gray-800"
+              onClick={() => {
+                setShowPopup(false);
+                setSearchRegister('');
+              }}
+            >
+              ✕
+            </button>
+
+            <h3 className="text-xl font-bold mb-4 text-center text-gray-800">Asistencia Registrada</h3>
+
+            <div className="space-y-2">
+              <p className="text-gray-700">
+                <strong className="text-gray-900">DNI:</strong> {filteredRegister[0].dni}
+              </p>
+              <p className="text-gray-700">
+                <strong className="text-gray-900">Nombre:</strong> {filteredRegister[0].nameSurname}
+              </p>
+              <p className="text-gray-700">
+                <strong className="text-gray-900">Clase:</strong> {filteredRegister[0].classroom}
+              </p>
+              <p className="text-gray-700">
+                <strong className="text-gray-900">Expediente:</strong> {filteredRegister[0].exp}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
       <RegisterForm
         formData={formData}
         isEditing={isEditing}
